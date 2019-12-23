@@ -1,27 +1,40 @@
 var countDeafRats = function(town) {
-    let PPposition;
     let leftMouse = 0, 
-        rightMouse = 0;
+        rightMouse = 0,
+        deafMouses = 0,
+        pidePiper = false;
     
     for(let i=0; i<town.length; i++) {
         if(town[i] == '~' && town[i+1] == 'O') {
-            rightMouse++;
-            i++;
+            if (pidePiper) {
+                deafMouses++;
+                i++;
+            }
+            // rightMouse++;
+            // i++;
         } else if(town[i] == 'O' && town[i+1] == '~') {
-            leftMouse++;
-            i++;
+            if (!pidePiper) {
+                deafMouses++;
+            }
+            // leftMouse++;
+            // i++;
+        } else if(town[i] == 'P') {
+            console.log(`this is PidePiper position -> ${i}`);
+            pidePiper = true;
         } else {
             continue;
         }
     }
 
+    /*
     console.log(`rightMouse -> ${rightMouse}`);
     console.log(`leftMouse -> ${leftMouse}`);
     console.log('<---------------------------->');
+    */
 
-    return 0;
+    return deafMouses;
 }
 
-countDeafRats("~O~O~O~O P");
-countDeafRats("P O~ O~ ~O O~");
-countDeafRats("~O~O~O~OP~O~OO~");
+console.log(countDeafRats("~O~O~O~O P"));
+console.log(countDeafRats("P O~ O~ ~O O~"));
+console.log(countDeafRats("~O~O~O~OP~O~OO~"));
