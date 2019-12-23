@@ -4,21 +4,18 @@ var countDeafRats = function(town) {
     
     for(let i=0; i<town.length; i++) {
         if((town[i] == '~' && town[i+1] == 'O') && pidePiper) {
-            console.log(`i>${i} form right`);
             deafMouses++;
-            i++;
         } else if((town[i] == 'O' && town[i+1] == '~') && !pidePiper) {
-            console.log(`i>${i} form left`);
             deafMouses++;
-            i++;
         } else if(town[i] == 'P') {
             pidePiper = true;
-        } else {
+            continue;
+        } else if(town[i] == ' ') {
             continue;
         }
+        i++;
     }
 
-    console.log('<---------------------------->');
     return deafMouses;
 }
 
