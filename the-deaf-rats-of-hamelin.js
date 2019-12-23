@@ -1,25 +1,21 @@
 var countDeafRats = function(town) {
-    let leftMouse = 0, 
-        rightMouse = 0,
-        deafMouses = 0,
+    let deafMouses = 0,
         pidePiper = false;
     
     for(let i=0; i<town.length; i++) {
         if(town[i] == '~' && town[i+1] == 'O') {
             if (pidePiper) {
                 deafMouses++;
+                console.log('incremented from right');
                 i++;
             }
-            // rightMouse++;
-            // i++;
         } else if(town[i] == 'O' && town[i+1] == '~') {
             if (!pidePiper) {
                 deafMouses++;
+                console.log('incremented from left');
+                i++;
             }
-            // leftMouse++;
-            // i++;
         } else if(town[i] == 'P') {
-            console.log(`this is PidePiper position -> ${i}`);
             pidePiper = true;
         } else {
             continue;
@@ -31,7 +27,7 @@ var countDeafRats = function(town) {
     console.log(`leftMouse -> ${leftMouse}`);
     console.log('<---------------------------->');
     */
-
+    console.log('<---------------------------->');
     return deafMouses;
 }
 
