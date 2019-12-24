@@ -9,10 +9,10 @@ function getMiddle(s) {
 */
 
 function getMiddle(s) {
-    console.log(s.length / 2 - 1);
-    return s.substring(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2:1);
+    let middle = Math.ceil(s.length / 2 - 1);
+    return s.substring(middle, s.length % 2 === 0 ? middle + 2:middle + 1);
 }
 
 console.log(getMiddle("test"));
-// console.log(getMiddle('A'));
-// console.log(getMiddle('testing'));
+console.log(getMiddle('A'));
+console.log(getMiddle('testing'));
