@@ -1,5 +1,5 @@
 function findChildren(santasList, children) {
-    return children.filter(child => santasList.indexOf(child) != -1).sort();
+    return [...new Set(children.filter(child => santasList.indexOf(child) != -1).sort())];
 }
 
 console.log(findChildren(["Jason", "Jackson", "Jordan", "Johnny"], ["Jason", "Jordan", "Jennifer"]));
