@@ -1,3 +1,4 @@
+/*
 function findShort(s){
     let strArr = s.split(' '),
         shortestLenght = 100000000000;
@@ -6,6 +7,11 @@ function findShort(s){
         if(val.length < shortestLenght) shortestLenght = val.length
     });
     return shortestLenght;
+}
+*/
+
+const findShort = (s) => {
+    return Math.min(...s.split(' ').map((val) => val.length));
 }
 
 console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
