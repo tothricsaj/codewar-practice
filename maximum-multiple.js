@@ -1,5 +1,5 @@
 function maxMultiple(divisor, bound){
-  //your code here
+    return Math.floor((bound / divisor)) * divisor;
 }
 
 console.log(maxMultiple(2,7));
