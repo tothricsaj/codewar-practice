@@ -6,6 +6,11 @@ function lottery(str){
         if(char.charCodeAt() >= 48 && char.charCodeAt() <= 57) lotterNumber += str[i];
     }
 
+    let uniqeStr = new Set(lotterNumber);
+    lotterNumber = '';
+
+    uniqeStr.forEach((val) => lotterNumber += val);
+
     if(lotterNumber.length > 0) return lotterNumber;
     else return 'One more run!';
 }
