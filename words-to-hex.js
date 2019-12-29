@@ -2,8 +2,6 @@ function wordsToHex(words) {
     let arr = words.split(' '),
         code = [];
 
-    // return words.charCodeAt();
-
     for(let i=0; i<arr.length; i++) {
         let tmp = '#';
         if(arr[i].length >=3) {
@@ -23,8 +21,6 @@ function wordsToHex(words) {
                     tmp += '00';
                     break;
                 default:
-                    console.log('Something went wrong!');
-                    console.log(tmp);
                     return;
             }
 
