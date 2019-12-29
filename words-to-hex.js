@@ -8,8 +8,26 @@ function wordsToHex(words) {
         let tmp = '#';
         if(arr[i].length >=3) {
             for(let n=0; n<3; n++) {
-                tmp += arr[i][n].charCodeAt();
+                tmp += arr[i][n].charCodeAt().toString(16);
             }
+        } else {
+            for(let n=0; n<arr[i].length; n++) {
+                tmp += arr[i][n].charCodeAt().toString(16);
+            }
+
+            switch(tmp.length) {
+                case(3):
+                    tmp += '0000';
+                    break;
+                case(5):
+                    tmp += '00';
+                    break;
+                default:
+                    console.log('Something went wrong!');
+                    console.log(tmp);
+                    return;
+            }
+
         }
 
         code.push(tmp);
