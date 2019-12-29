@@ -1,16 +1,18 @@
 function wordsToHex(words) {
     let arr = words.split(' '),
-        code = '#';
+        code = [];
+
+    // return words.charCodeAt();
 
     for(let i=0; i<arr.length; i++) {
-        let tmp = '';
+        let tmp = '#';
         if(arr[i].length >=3) {
-            for(let n=0; n<=3; n++) {
-               tmp += arr[i][n].charCodeAt();
+            for(let n=0; n<3; n++) {
+                tmp += arr[i][n].charCodeAt();
             }
         }
 
-        code += tmp;
+        code.push(tmp);
         
     }
 
