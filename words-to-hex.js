@@ -1,19 +1,20 @@
 function wordsToHex(words) {
-    let arr = words.split(' ');
+    let arr = words.split(' '),
+        code = '#';
 
-    return arr.reduce((acc, curr) => {
-        let tmp = '#';
-
-        if(curr.length >= 3) {
-
-            console.log(curr);
-            tmp += curr[0].charCodeAt();
-            tmp += curr[1].charCodeAt();
-            tmp += curr[2].charCodeAt();
+    for(let i=0; i<arr.length; i++) {
+        let tmp = '';
+        if(arr[i].length >=3) {
+            for(let n=0; n<=3; n++) {
+               tmp += arr[i][n].charCodeAt();
+            }
         }
 
-        return tmp;
-    });
+        code += tmp;
+        
+    }
+
+    return code;
 }
 
 console.log(wordsToHex("Hello, my name is Gary and I like cheese."));
