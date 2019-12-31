@@ -14,8 +14,11 @@ function wordsToHex(words) {
             }
 
             switch(tmp.length) {
-                case(3):
-                    tmp += '0000';
+                case(1):
+                    tmp += '000000';
+                    break;
+                case(4):
+                    tmp += '0';
                     break;
                 case(5):
                     tmp += '00';
