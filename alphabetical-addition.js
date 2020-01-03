@@ -1,5 +1,9 @@
 function addLetters(...letters) {
-    return letters.map(el => el.charCodeAt() - 96);
+    return String.fromCharCode(
+        letters.map(el => el.charCodeAt() - 96)
+        .reduce((acc, el) => {
+            return acc + el
+        }) + 96);
 }
 
 console.log(addLetters('a', 'b', 'c'))
