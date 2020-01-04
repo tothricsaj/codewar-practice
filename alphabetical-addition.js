@@ -10,8 +10,9 @@ function addLetters(...letters) {
             return acc + el
     })
 
-    if(numChar <= 26) return String.fromCharCode(numChar + 96);
-    else return String.fromCharCode((numChar - 26) + 96);
+    if(numChar > 26) numChar -= 26;
+
+    return String.fromCharCode(numChar + 96);
 
 }
 
