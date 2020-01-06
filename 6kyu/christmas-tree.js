@@ -1,18 +1,21 @@
 function christmasTree(height) {
-    let riseCountVal = 2;
-    let stars = '*\n';
 
-    for(let i=0; i<height-1; i++) {
+    let stars = new Array(height).fill('*');
+    let pads = 1;
 
-        for(let n=0; n<riseCountVal+1; n++) {
-            stars += '*';
-        }
-
-        stars += '\n';
-
-        riseCountVal += 2;
+    for(let i=0; i<pads; i++) {
+        stars.push(' ');
     }
 
+    for(let i=height; i>0; i--) {
+        stars.push('*');
+    }
+
+    for(let i=0; i<pads; i++) {
+        stars.push(' ');
+    }
+
+    
     return stars;
 }
 
