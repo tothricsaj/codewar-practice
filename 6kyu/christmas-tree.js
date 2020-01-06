@@ -3,20 +3,24 @@ function christmasTree(height) {
     let stars = new Array(height).fill('*');
     let pads = 1;
 
-    for(let i=0; i<pads; i++) {
-        stars.push(' ');
-    }
+    for(let dec=height; dec>0; dec--) {
+        for(let i=0; i<pads; i++) {
+            stars.push(' ');
+        }
 
-    for(let i=height; i>0; i--) {
-        stars.push('*');
-    }
+        for(let i=dec; i>0; i--) {
+            stars.push('*');
+        }
 
-    for(let i=0; i<pads; i++) {
-        stars.push(' ');
-    }
+        for(let i=0; i<pads; i++) {
+            stars.push(' ');
+        }
 
+        pads++;
+        stars.push('\n');
+    }
     
-    return stars;
+    return stars.reverse().join('');
 }
 
 // console.log(christmasTree(1))
