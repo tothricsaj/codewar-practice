@@ -1,8 +1,8 @@
 function christmasTree(height) {
     for(let i=0; i<height; i++) {
-        let stars = '*';
+        let stars = '*\n';
 
-        console.log(`${stars}`);
+        return stars;
     }
 }
 
