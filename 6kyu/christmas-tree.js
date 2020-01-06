@@ -8,7 +8,7 @@ function christmasTree(height) {
             stars.push(' ');
         }
 
-        for(let i=dec; i>0; i--) {
+        for(let i=height; i>0; i--) {
             stars.push('*');
         }
 
@@ -17,6 +17,7 @@ function christmasTree(height) {
         }
 
         pads++;
+        height -= 2;
         stars.push('\n');
     }
     
