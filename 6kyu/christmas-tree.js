@@ -1,9 +1,19 @@
 function christmasTree(height) {
-    for(let i=0; i<height; i++) {
-        let stars = '*\n';
+    let riseCountVal = 2;
+    let stars = '*\n';
 
-        return stars;
+    for(let i=0; i<height-1; i++) {
+
+        for(let n=0; n<riseCountVal+1; n++) {
+            stars += '*';
+        }
+
+        stars += '\n';
+
+        riseCountVal += 2;
     }
+
+    return stars;
 }
 
 // console.log(christmasTree(1))
@@ -12,4 +22,3 @@ function christmasTree(height) {
 // console.log(christmasTree(4))
 console.log(christmasTree(5))
 // console.log(christmasTree(6))
-
