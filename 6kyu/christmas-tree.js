@@ -1,5 +1,8 @@
 function christmasTree(height) {
-    
+    let pads = height - 1,
+        starLength = height + (height - 1);
+
+    return starLength;
 }
 
 // console.log(christmasTree(1))
