@@ -1,8 +1,22 @@
 function christmasTree(height) {
-    let pads = height - 1,
-        starLength = height + (height - 1);
+    let padsLength = height - 1,
+        starLength = 1, // height + (height - 1),
+        tree = '';
 
-    return starLength;
+    for(let i=0; i<height; i++) {
+        let pads = new Array(padsLength).fill(' ').join('');
+        let stars = new Array(starLength).fill('*').join('');
+
+        tree += pads;
+        tree += stars;
+        tree += pads;
+        tree += '\n';
+
+        padsLength--;
+        starLength += 2;
+    }
+
+    return tree;
 }
 
 // console.log(christmasTree(1))
