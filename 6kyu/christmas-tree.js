@@ -4,10 +4,9 @@ function christmasTree(height) {
         tree = '';
 
     for(let i=0; i<height; i++) {
-        let pads = new Array(padsLength).fill(' ').join('');
-        let stars = new Array(starLength).fill('*').join('');
+        let pads = ' '.repeat(padsLength);
 
-        tree += pads + stars + pads + '\n';
+        tree += pads + '*'.repeat(starLength) + pads + '\n';
 
         padsLength--;
         starLength += 2;
