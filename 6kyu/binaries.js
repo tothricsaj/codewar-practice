@@ -1,11 +1,17 @@
 function code(strng) {
-    let dec = +strng,
+    let numbers = strng.split(''),
         binar = [];
 
-    while(dec >= 1) {
-        binar.push(dec%2);
-        dec = Math.floor(dec/2);
-    }
+    numbers.forEach(el => {
+
+        let dec = +el;
+
+        while(dec >= 1) {
+            binar.push(dec%2);
+            dec = Math.floor(dec/2);
+        }
+
+    });
 
     return binar.reverse().join('');
 }
