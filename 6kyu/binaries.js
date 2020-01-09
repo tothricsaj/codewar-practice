@@ -4,16 +4,20 @@ function code(strng) {
 
     numbers.forEach(el => {
 
-        let dec = +el;
+        let dec = +el,
+            tmp = [];
 
         while(dec >= 1) {
-            binar.push(dec%2);
+            tmp.push(dec%2);
             dec = Math.floor(dec/2);
+
         }
+
+        binar.push(tmp.reverse().join(''));
 
     });
 
-    return binar.reverse().join('');
+    return binar;
 }
 
 function decode(str) {
