@@ -17,12 +17,18 @@ function code(strng) {
 
     });
 
-    return binar;
+    return binar.map(el => {
+        let digits = '0'.repeat(el.length -1);
+        digits = digits + '1';
+        return digits + el;
+    }).join('');
 }
 
 function decode(str) {
     // your code
 }
 
-console.log(code('4'));
+console.log(code('3'));
 console.log(code('62'));
+console.log(code('213'));
+
