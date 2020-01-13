@@ -28,16 +28,18 @@ function code(strng) {
 
 function decode(str) {
     let binArr = [];
-    for(let i = str.length; i>0; i--) {
-        if(str.substring(i, i-4) === '1000') {
-            binArr.push('8');
-            continue;
-        } else if(str.substring(i, i-4) === '1001') {
-            binArr.push('9');
-            continue;
+    let counter = 0;
+    
+    for(let i=0; i<str.length; i++) {
+        if(str[i] === '0') {
+            counter++;
+            continue
+        }
+        else if(str[i] === '1') {
 
         }
     }
+
 
     return binArr;
 }
@@ -45,9 +47,9 @@ function decode(str) {
 // console.log(code('8'));
 // console.log(code('9'));
 
-// console.log(code('62'));
+console.log(code('64'));
 // console.log(code('213'));
 
-console.log(decode(code('8')));
-console.log(decode(code('9')));
+console.log(decode(code('647')));
+// console.log(decode(code('9')));
 
