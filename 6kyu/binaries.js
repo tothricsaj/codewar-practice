@@ -20,7 +20,7 @@ function code(strng) {
     });
 
     return binar.map(el => {
-        let digits = '0'.repeat(el.length -1);
+        let digits = '0'.repeat(el.length -1); // TODO: treat the 0 character
         digits = digits + '1';
         return digits + el;
     }).join('');
@@ -36,7 +36,10 @@ function decode(str) {
             continue
         }
         else if(str[i] === '1') {
-
+            counter++;
+            binArr.push(str.substring(i+1, i+counter+1));
+            i += counter;
+            counter = 0;
         }
     }
 
@@ -44,12 +47,12 @@ function decode(str) {
     return binArr;
 }
 
-// console.log(code('8'));
+console.log(code('2'));
 // console.log(code('9'));
 
-console.log(code('64'));
+// console.log(code('64'));
 // console.log(code('213'));
 
-console.log(decode(code('647')));
-// console.log(decode(code('9')));
+// console.log(decode(code('647')));
+console.log(decode(code('3')));
 
