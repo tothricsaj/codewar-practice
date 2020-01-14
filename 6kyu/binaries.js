@@ -1,4 +1,4 @@
-// String.prototype.map = Array.prototype.map;
+String.prototype.map = Array.prototype.map;
 
 function code(strng) {
     let numbers = strng.split(''),
@@ -29,6 +29,7 @@ function code(strng) {
 function decode(str) {
     let binArr = [];
     let counter = 0;
+    let decimal = 0;
     
     for(let i=0; i<str.length; i++) {
         if(str[i] === '0') {
@@ -43,16 +44,23 @@ function decode(str) {
         }
     }
 
-
     return binArr;
+    return binArr.map((el) => {
+        let binStr = el.split('').reverse().join('');
+        return binStr.map(num => {
+            return num === '1' ? decimal += 2 : decimal += 0;
+        })
+    });
+
+    return decimal;
 }
 
-console.log(code('2'));
+console.log(code('47'));
 // console.log(code('9'));
 
 // console.log(code('64'));
 // console.log(code('213'));
 
 // console.log(decode(code('647')));
-console.log(decode(code('3')));
+console.log(decode(code('47')));
 
