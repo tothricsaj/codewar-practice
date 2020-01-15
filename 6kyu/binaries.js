@@ -20,8 +20,8 @@ function code(strng) {
     });
 
     return binar.map(el => {
-        console.warn(el.length);
-        let digits = '0'.repeat(el.length === 0 ? 1 : el.length -1); // TODO: treat the 0 character
+        if(el.length === 0) return '10'
+        let digits = '0'.repeat(el.length -1);
         digits = digits + '1';
         return digits + el;
     }).join('');
@@ -63,7 +63,7 @@ function decode(str) {
 }
 
 
-console.log(code('0'));
+console.log(code('10111213'));
 /*
 console.log(decode(code('8')));
 
