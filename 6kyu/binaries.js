@@ -44,23 +44,28 @@ function decode(str) {
         }
     }
 
-    return binArr;
     return binArr.map((el) => {
+        decimal = 0;
         let binStr = el.split('').reverse().join('');
-        return binStr.map(num => {
-            return num === '1' ? decimal += 2 : decimal += 0;
-        })
-    });
+        // console.log(`binStr -> ${binStr}`);
+        for(let i=0; i<binStr.length; i++) {
+            // console.log(`binStr[i] -> ${binStr[i]}`)
+            if(i === 0 && binStr[i] === '1') decimal = 1;
+            if(i !== 0 && binStr[i] === '1') decimal += i*2;
+        }
+        // console.log(`decimal -> ${decimal}`);
+        return decimal;
+    }).join('');
 
     return decimal;
 }
 
 console.log(code('47'));
-// console.log(code('9'));
-
-// console.log(code('64'));
-// console.log(code('213'));
-
-// console.log(decode(code('647')));
 console.log(decode(code('47')));
+
+console.log(code('9'));
+console.log(decode(code('9')));
+
+console.log(code('64'));
+console.log(decode(code('64')));
 
