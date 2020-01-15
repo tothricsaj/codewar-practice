@@ -49,23 +49,27 @@ function decode(str) {
         let binStr = el.split('').reverse().join('');
         // console.log(`binStr -> ${binStr}`);
         for(let i=0; i<binStr.length; i++) {
+            // console.log(`i -> ${i}`)
             // console.log(`binStr[i] -> ${binStr[i]}`)
-            if(i === 0 && binStr[i] === '1') decimal = 1;
-            if(i !== 0 && binStr[i] === '1') decimal += i*2;
+            if(binStr[i] === '1') decimal += 2**i;
+
+            // console.log(`decimal -> ${decimal}`)
         }
-        // console.log(`decimal -> ${decimal}`);
         return decimal;
     }).join('');
 
     return decimal;
 }
 
+
+console.log(code('8'));
+console.log(decode(code('8')));
+
 console.log(code('47'));
 console.log(decode(code('47')));
 
-console.log(code('9'));
-console.log(decode(code('9')));
+console.log(code('2'));
+console.log(decode(code('2')));
 
 console.log(code('64'));
 console.log(decode(code('64')));
-
