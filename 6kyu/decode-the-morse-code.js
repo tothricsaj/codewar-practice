@@ -46,7 +46,7 @@ decodeMorse = function(morseCode){
         if(!!el) {
             return MORSE_CODE[el].toUpperCase();
         }
-    }) // .join('');
+    }).join('').replace(/  +/g, ' ');
 }
 
 console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
