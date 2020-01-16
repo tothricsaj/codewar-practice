@@ -39,7 +39,7 @@ const MORSE_CODE = {
 
 decodeMorse = function(morseCode){
 
-    return morseCode.split(' ').map((el, index)=> {
+    morseCode = morseCode.split(' ').map((el, index)=> {
         if(el === '') {
             return ' ';
         }
@@ -47,7 +47,24 @@ decodeMorse = function(morseCode){
             return MORSE_CODE[el].toUpperCase();
         }
     }).join('').replace(/  +/g, ' ');
+
+    console.log(`before ${morseCode}`, 'cica');
+    console.log(morseCode.length);
+
+    if(morseCode[0] === ' ') morseCode = morseCode.substring(1);
+
+    console.log(`first ${morseCode}`, 'cica');
+
+    if(morseCode[morseCode.length - 1] === ' ') morseCode = morseCode.substring(0, morseCode.length - 1);
+
+    console.log(`second ${morseCode}`, 'mérésihiba');
+
+    console.log(morseCode.length);
+
+    return morseCode;
 }
 
-console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
-console.log(decodeMorse('.... .   .--- ..-   -.. .'));
+// console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
+// console.log(decodeMorse('.... .   .--- ..-   -.. .'));
+console.log(decodeMorse('--      '), 'kacsa');
+console.log('asdf', 'bar')
