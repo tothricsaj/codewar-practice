@@ -36,3 +36,18 @@ const MORSE_CODE = {
     '----.':  '9',
     '-----':  '0',
 }
+
+decodeMorse = function(morseCode){
+
+    return morseCode.split(' ').map((el, index)=> {
+        if(el === '') {
+            return ' ';
+        }
+        if(!!el) {
+            return MORSE_CODE[el].toUpperCase();
+        }
+    }) // .join('');
+}
+
+console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
+console.log(decodeMorse('.... .   .--- ..-   -.. .'));
