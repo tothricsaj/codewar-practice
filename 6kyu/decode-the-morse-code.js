@@ -48,23 +48,24 @@ decodeMorse = function(morseCode){
         }
     }).join('').replace(/  +/g, ' ');
 
-    console.log(`before ${morseCode}`, 'cica');
-    console.log(morseCode.length);
+    console.log(`before ${morseCode}` + 'kutya');
+    // console.log(morseCode.length);
 
     if(morseCode[0] === ' ') morseCode = morseCode.substring(1);
 
-    console.log(`first ${morseCode}`, 'cica');
+    console.log(`first ${morseCode}` + 'cica');
 
-    if(morseCode[morseCode.length - 1] === ' ') morseCode = morseCode.substring(0, morseCode.length - 1);
+    // if(morseCode[morseCode.length - 1] === ' ') morseCode = morseCode.substring(0, morseCode.length - 1);
+    if(morseCode[morseCode.length - 1] === ' ') morseCode = morseCode.slice(0, -1);
 
-    console.log(`second ${morseCode}`, 'mérésihiba');
+    console.log(`second ${morseCode}` + 'mérésihiba');
 
-    console.log(morseCode.length);
+    // console.log(morseCode.length);
 
     return morseCode;
 }
 
 // console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
 // console.log(decodeMorse('.... .   .--- ..-   -.. .'));
-console.log(decodeMorse('--      '), 'kacsa');
-console.log('asdf', 'bar')
+// console.log(decodeMorse(' . ') + 's');
+console.log(decodeMorse('   .   . ') + '$');
