@@ -39,33 +39,18 @@ const MORSE_CODE = {
 
 decodeMorse = function(morseCode){
 
-    morseCode = morseCode.split(' ').map((el, index)=> {
-        if(el === '') {
-            return ' ';
-        }
-        if(!!el) {
-            return MORSE_CODE[el].toUpperCase();
-        }
-    }).join('').replace(/  +/g, ' ');
+    function decodeLetter(letter) {
+        return MORSE_CODE[letter];
+    }
 
-    console.log(`before ${morseCode}` + 'kutya');
-    // console.log(morseCode.length);
+    function decodeWord(word) {
+        return word.split(' ').map(decodeLetter).join('');
+    }
 
-    if(morseCode[0] === ' ') morseCode = morseCode.substring(1);
-
-    console.log(`first ${morseCode}` + 'cica');
-
-    // if(morseCode[morseCode.length - 1] === ' ') morseCode = morseCode.substring(0, morseCode.length - 1);
-    if(morseCode[morseCode.length - 1] === ' ') morseCode = morseCode.slice(0, -1);
-
-    console.log(`second ${morseCode}` + 'mérésihiba');
-
-    // console.log(morseCode.length);
-
-    return morseCode;
+    return morseCode.trim().split('   ').map(decodeWord).join(' ');
 }
 
-// console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
+console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
 // console.log(decodeMorse('.... .   .--- ..-   -.. .'));
 // console.log(decodeMorse(' . ') + 's');
-console.log(decodeMorse('   .   . ') + '$');
+// console.log(decodeMorse('   .   . ') + '$');
