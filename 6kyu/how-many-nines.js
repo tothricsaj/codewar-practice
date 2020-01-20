@@ -7,10 +7,10 @@ function nines(n) {
     arr.push(n);
 
     return arr.reduce((acc, el) => {
-        let tmp = new String(el).toString();
-        console.log((tmp.match(/9/g) || []).length);
-        return (tmp.match(/9/g) || []).length;
+        // TODO treat 99 and other which is contain more than one 9 digit
+        return (new String(el).toString().match(/9/g) || []).length + acc;
     }, 0);
 }
 
-console.log(nines(10));
+console.log(nines(3950));
+console.log(nines(90));
