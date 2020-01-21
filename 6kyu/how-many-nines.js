@@ -8,7 +8,7 @@ function nines(n) {
 
     return arr.reduce((acc, el) => {
         // TODO treat 99 and other which is contain more than one 9 digit
-        return (new String(el).toString().match(/9/g) || []).length + acc;
+        return new String(el).toString().includes('9') ? acc + 1 : acc + 0;
     }, 0);
 }
 
