@@ -1,13 +1,10 @@
 function nines(n) {
-    let arr = new Array(n).fill(0).map((el, i) => {
-        return i;
-    });
+    let arr = new Array(n).fill(0).map((el, i) => i);
 
     arr.shift();
     arr.push(n);
 
     return arr.reduce((acc, el) => {
-        // TODO treat 99 and other which is contain more than one 9 digit
         return new String(el).toString().includes('9') ? acc + 1 : acc + 0;
     }, 0);
 }
