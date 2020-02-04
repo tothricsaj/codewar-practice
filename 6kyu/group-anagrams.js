@@ -2,6 +2,7 @@ function groupAnagrams(words){
     let result = [];
 
     for(let i=0; i<words.length; i++) {
+
         let tmp = words.slice(i, words.length);
         let currentWord = words[i].split('').sort().toString();
         let tmpArr = [];
@@ -9,7 +10,8 @@ function groupAnagrams(words){
         console.log(tmp);
 
         for(let n=0; n<tmp.length; n++) {
-           let comparedWord = tmp[n].match(/[a-zA-z]/g).sort().toString();
+
+            let comparedWord = tmp[n].match(/[a-zA-z]/g).sort().toString();
             if(comparedWord === currentWord) {
                 tmpArr.push(tmp[n]);
             }
