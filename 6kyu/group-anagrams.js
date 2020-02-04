@@ -1,6 +1,8 @@
 function groupAnagrams(words){
-  // your turn !
-  return [words];
+
+    return words.reduce((el, i) => {
+
+    }, []);
 }
 
 console.log(groupAnagrams(["rat", "tar", "star"]));
