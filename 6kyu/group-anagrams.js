@@ -6,9 +6,14 @@ function groupAnagrams(words){
         let currentWord = words[i].split('').sort().toString();
         let tmpArr = [];
 
+        console.log(tmp);
+
         for(let n=0; n<tmp.length; n++) {
            let comparedWord = tmp[n].match(/[a-zA-z]/g).sort().toString();
-           if(comparedWord === currentWord) tmpArr.push(tmp[n]);
+            if(comparedWord === currentWord) {
+                tmpArr.push(tmp[n]);
+            }
+
         }
 
         result.push(tmpArr);
