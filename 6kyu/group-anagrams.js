@@ -7,16 +7,21 @@ function groupAnagrams(words){
         let currentWord = words[i].split('').sort().toString();
         let tmpArr = [];
 
-        console.log(tmp);
+        // console.log(tmp);
 
         for(let n=0; n<tmp.length; n++) {
 
             let comparedWord = tmp[n].match(/[a-zA-z]/g).sort().toString();
             if(comparedWord === currentWord) {
+                console.log(tmp);
+                console.log(n);
                 tmpArr.push(tmp[n]);
+                words.splice(n+1, 1);
             }
 
         }
+
+        words.shift();
 
         result.push(tmpArr);
     }
@@ -24,4 +29,4 @@ function groupAnagrams(words){
     return result;
 }
 
-console.log(groupAnagrams(["rat", "tar", "star", "tsar"]));
+console.log(groupAnagrams(["tar", "star", "tsar", "rat" ]));
