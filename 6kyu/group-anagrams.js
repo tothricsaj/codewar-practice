@@ -7,21 +7,26 @@ function groupAnagrams(words){
         let currentWord = words[i].split('').sort().toString();
         let tmpArr = [];
 
-        // console.log(tmp);
+        console.log(`${words} - ${words[i]} - ${i}`);
 
         for(let n=0; n<tmp.length; n++) {
 
             let comparedWord = tmp[n].match(/[a-zA-z]/g).sort().toString();
+
+            // console.table({
+            //     n: n,
+            //     // words: words,
+            //     currentWord: currentWord,
+            //     comparedWord: comparedWord
+            // });
+
             if(comparedWord === currentWord) {
-                console.log(tmp);
-                console.log(n);
                 tmpArr.push(tmp[n]);
-                words.splice(n+1, 1);
+                console.log(words.splice(words.indexOf(tmp[n]), 1));
+                console.warn('BAANG!!!!!');
             }
 
         }
-
-        words.shift();
 
         result.push(tmpArr);
     }
