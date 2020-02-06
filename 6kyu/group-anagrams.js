@@ -9,9 +9,12 @@ function groupAnagrams(words){
 
         console.log(`${words} - ${words[i]} - ${i}`);
 
+        // tmpArr.push(words[i]);
+
         for(let n=0; n<tmp.length; n++) {
 
             let comparedWord = tmp[n].match(/[a-zA-z]/g).sort().toString();
+            console.log(`currentWord - ${currentWord}; comparedWord - ${comparedWord}`)
 
             // console.table({
             //     n: n,
