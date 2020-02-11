@@ -5,16 +5,16 @@ function groupAnagrams(words){
 
         let tmp = words.slice(i, words.length);
         let currentWord = words[i].split('').sort().toString();
-        let tmpArr = [];
+        let anagArr = [];
 
         console.log(`${words} - ${words[i]} - ${i}`);
 
-        // tmpArr.push(words[i]);
+        // anagArr.push(words[i]);
 
         for(let n=0; n<tmp.length; n++) {
 
             let comparedWord = tmp[n].match(/[a-zA-z]/g).sort().toString();
-            console.log(`currentWord - ${currentWord}; comparedWord - ${comparedWord}`)
+            // console.log(`currentWord - ${currentWord}; comparedWord - ${comparedWord}`)
 
             // console.table({
             //     n: n,
@@ -24,14 +24,17 @@ function groupAnagrams(words){
             // });
 
             if(comparedWord === currentWord) {
-                tmpArr.push(tmp[n]);
-                console.log(words.splice(words.indexOf(tmp[n]), 1));
-                console.warn('BAANG!!!!!');
+                anagArr.push(tmp[n]);
+                // console.log(words.splice(words.indexOf(tmp[n]), 1));
+                // console.warn('BAANG!!!!!');
+                words.splice(words.indexOf(tmp[n]), 1)
+                console.log(`This is words inner loop: ${words}\n`)
             }
 
         }
 
-        result.push(tmpArr);
+        result.push(anagArr);
+        i--;
     }
 
     return result;
