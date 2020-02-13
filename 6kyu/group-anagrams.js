@@ -27,11 +27,19 @@
 
 function groupAnagrams(words){
   var groups = {};
-  words.forEach(function(w) {
+  words.forEach(function(w, i) {
     var s = w.split('').sort().join('');
     groups[s] = (groups[s] || []).concat([w]);
+    console.log(i)
+    console.log('-------------------------------------')
+    console.log(w)
+    console.log(groups[s]);
+    console.log(groups);
+    console.log('-------------------------------------')
   });
+
+  // console.log(groups);
   return Object.keys(groups).map(function(k) {return groups[k];});
 }
 
-console.log(groupAnagrams(["tar", "star", "rat" ]));
+console.log(groupAnagrams(["tar", "star", "rat", "tsar" ]));
