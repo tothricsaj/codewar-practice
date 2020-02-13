@@ -1,12 +1,12 @@
 function nines(n) {
     let arr = new Array(Number(n)).fill(0).map((el, i) => i);
 
-    arr.shift();
+    // arr.shift();
     arr.push(n);
 
     return BigInt(
         arr.reduce((acc, el) => {
-            return new String(el).toString().includes('9') ? acc + 1 : acc + 0;
+            return el%9 === 0 ? acc + 1 : acc + 0;
         }, 0)
     )
 }
