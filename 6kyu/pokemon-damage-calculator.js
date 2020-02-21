@@ -1,63 +1,14 @@
 function calculateDamage(yourType, opponentType, attack, defense){
 
-    let effectiveness;
+    const types = {
+        fire: { fire: 0.5, water: 0.5, grass: 2, electric: 1 },
+        water: { fire: 2, water: 0.5, grass: 0.5, electric: 0.5 },
+        grass: { fire: 0.5, water: 2, grass: 0.5, electric: 1 },
+        electric: { fire: 1, water: 2, grass: 1, electric: 0.5 },
 
-    if (yourType === 'fire') {
-        switch(opponentType) {
-            case 'grass':
-                effectiveness = 2;
-                break;
-            case 'water':
-                effectiveness = 0.5;
-                break;
-            case 'electric':
-                effectiveness = 1;
-                break;
-            default:
-                effectiveness = 1;
-        }
-    } else if (yourType === 'water') {
-        switch(opponentType) {
-            case 'grass':
-                effectiveness = 0.5;
-                break;
-            case 'electric':
-                effectiveness = 0.5;
-                break;
-            default:
-                effectiveness = 1;
-        }
-    } else if (yourType === 'grass') {
-        switch(opponentType) {
-            case 'water':
-                effectiveness = 2;
-                break;
-            case 'fire':
-                effectiveness = 0.5;
-                break;
-            case 'electric':
-                effectiveness = 1;
-                break;
-            default:
-                effectiveness = 1;
-        }
-
-    } else if (yourType === 'electric') {
-        switch(opponentType) {
-            case 'water':
-                effectiveness = 0.5;
-                break;
-            case 'grass':
-                effectiveness = 1;
-                break;
-            default:
-                effectiveness = 1;
-        }
-    } else {
-        effectiveness = 1;
     }
 
-    return 50 * (attack / defense) * effectiveness
+    return 50 * (attack / defense) * types[yourType][opponentType]
 }
 
 // console.log(calculateDamage("fire", "water", 100, 100));
