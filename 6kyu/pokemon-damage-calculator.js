@@ -8,7 +8,7 @@ function calculateDamage(yourType, opponentType, attack, defense){
                 effectiveness = 2;
                 break;
             case 'water':
-                effectiveness = 0;5;
+                effectiveness = 0.5;
                 break;
             case 'electric':
                 effectiveness = 1;
