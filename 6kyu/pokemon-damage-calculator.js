@@ -38,3 +38,4 @@ function calculateDamage(yourType, opponentType, attack, defense){
 
 console.log(calculateDamage("fire", "water", 100, 100));
 console.log(calculateDamage("grass", "water", 100, 100))
+console.log(calculateDamage("electric", "fire", 100, 100))
