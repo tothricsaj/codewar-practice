@@ -27,8 +27,6 @@ function calculateDamage(yourType, opponentType, attack, defense){
             default:
                 effectiveness = 1;
         }
-    } else if (yourType === 'grass' && opponentType === 'electric') {
-        effectiveness = 1;
     } else if (yourType === 'grass') {
         switch(opponentType) {
             case 'water':
@@ -36,6 +34,9 @@ function calculateDamage(yourType, opponentType, attack, defense){
                 break;
             case 'fire':
                 effectiveness = 0.5;
+                break;
+            case 'electric':
+                effectiveness = 1;
                 break;
             default:
                 effectiveness = 1;
