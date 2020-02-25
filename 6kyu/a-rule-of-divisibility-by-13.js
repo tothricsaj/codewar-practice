@@ -1,37 +1,39 @@
+function countValue() {
+    return this.numArr.reduce((acc, val) => {
+        let digit = new Number(val).valueOf();
+        let res;
+
+        this.remIdex++
+
+        // console.table({
+        //     remIdex: remIdex,
+        //     currDigit: digit,
+        //     accumulator: acc,
+        //     remVal: rem[remIdex]
+        // })
+
+        res = this.rem[remIdex]*digit + acc;
+
+        if(this.remIdex+1 >= this.rem.length) {
+            this.remIdex = -1
+        } 
+
+        return res;
+
+    }, 0)
+}
+
 function thirt(n) {
-    let rem = [1, 10, 9, 12, 3, 4]
-    let remIdex = -1;
-    let stationary
+    this.rem = [1, 10, 9, 12, 3, 4]
+    this.remIdex = -1;
+
+    let stationary;
 
     if(n>=0) {
 
-        let numArr = new String(n).split('').reverse();
-
-        return numArr.reduce((acc, val) => {
-            let digit = new Number(val).valueOf();
-            let res;
-
-            remIdex++
-
-            // console.table({
-            //     remIdex: remIdex,
-            //     currDigit: digit,
-            //     accumulator: acc,
-            //     remVal: rem[remIdex]
-            // })
-
-            res = rem[remIdex]*digit + acc;
-
-            if(remIdex+1 >= rem.length) {
-                remIdex = -1
-            } 
-
-            return res;
-
-        }, 0);
-
-         
-        return stationary
+        this.numArr = new String(n).split('').reverse();
+        stationary = countValue();
+        return stationary;
     }
 }
 
