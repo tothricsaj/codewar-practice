@@ -9,21 +9,24 @@ function thirt(n) {
 
         return numArr.reduce((acc, val) => {
             let digit = new Number(val).valueOf();
+            let res;
 
             remIdex++
 
-            console.table({
-                remIdex: remIdex,
-                currDigit: digit,
-                accumulator: acc,
-                remVal: rem[remIdex]
-            })
+            // console.table({
+            //     remIdex: remIdex,
+            //     currDigit: digit,
+            //     accumulator: acc,
+            //     remVal: rem[remIdex]
+            // })
 
-            if(remIdex >= rem.length) {
-                remIdex = 0
+            res = rem[remIdex]*digit + acc;
+
+            if(remIdex+1 >= rem.length) {
+                remIdex = -1
             } 
 
-            return rem[remIdex]*digit + acc
+            return res;
 
         }, 0);
 
@@ -32,6 +35,6 @@ function thirt(n) {
     }
 }
 
-// console.log(thirt(8529));
-console.log(thirt(85299258))
+console.log(thirt(8529));
+// console.log(thirt(85299258))
 // console.log(thirt(5634))
