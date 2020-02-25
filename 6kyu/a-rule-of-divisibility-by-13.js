@@ -5,13 +5,6 @@ function countValue() {
 
         this.remIdex++
 
-        // console.table({
-        //     remIdex: remIdex,
-        //     currDigit: digit,
-        //     accumulator: acc,
-        //     remVal: rem[remIdex]
-        // })
-
         res = this.rem[remIdex]*digit + acc;
 
         if(this.remIdex+1 >= this.rem.length) {
@@ -38,13 +31,6 @@ function thirt(n) {
 
             this.numArr = new String(stationary).split('').reverse();
 
-            // console.table({
-            //     stationary: stationary,
-            //     numArr: this.numArr
-            // });
-
-            // console.log('-------------------------------------');
-
             this.remIdex = -1;
         }
 
@@ -53,5 +39,5 @@ function thirt(n) {
 }
 
 console.log(thirt(8529));
-console.log(thirt(85299258))
-console.log(thirt(5634))
+// console.log(thirt(85299258))
+// console.log(thirt(5634))
