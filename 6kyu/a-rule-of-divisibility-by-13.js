@@ -32,11 +32,26 @@ function thirt(n) {
     if(n>=0) {
 
         this.numArr = new String(n).split('').reverse();
-        stationary = countValue();
+
+        for(let i=0; i<3; i++) {
+            stationary = countValue();
+
+            this.numArr = new String(stationary).split('').reverse();
+
+            // console.table({
+            //     stationary: stationary,
+            //     numArr: this.numArr
+            // });
+
+            // console.log('-------------------------------------');
+
+            this.remIdex = -1;
+        }
+
         return stationary;
     }
 }
 
 console.log(thirt(8529));
-// console.log(thirt(85299258))
-// console.log(thirt(5634))
+console.log(thirt(85299258))
+console.log(thirt(5634))
