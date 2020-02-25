@@ -6,7 +6,15 @@ function thirt(n) {
 
         let numArr = new String(n).split('').reverse();
 
-        return numArr
+        numArr.forEach((val, i) => {
+            let tmp = [];
+            let digit = new Number(val).valueOf();
+
+            if(i+1 >= rem.length) i = 0
+
+            
+
+        });
 
         return stationary
     }
