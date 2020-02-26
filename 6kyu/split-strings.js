@@ -6,9 +6,10 @@ function solution(str){
             i++;
             return true
         }
-        console.log(str.slice(i,i+2))
         res.push(str.slice(i, i+2));
     });
+
+    return res;
 }
 
 console.log(solution("abcdef"))
