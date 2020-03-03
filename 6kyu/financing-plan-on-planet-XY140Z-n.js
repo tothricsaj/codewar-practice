@@ -1,6 +1,6 @@
 function finance(n) {
     let days = []
-    let addVal = 0
+    let addVal = 2
     let returnArr = () => {
         let arr = []
         for(let i=0; i<n; i++) {
@@ -9,8 +9,12 @@ function finance(n) {
         return arr
     }
 
-    for(let i=0; i<=n; i++) {
-        days.push(returnArr().fill(0, 0, i))
+    for(let i=0; i<n; i++) {
+        days.push(returnArr().map((val, index) => {
+            return val + addVal
+        }).fill(0, 0, i))
+
+        addVal++
     }
 
     return days
