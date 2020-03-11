@@ -3,15 +3,14 @@ function finance(n) {
     let addVal = 0
     let returnArr = () => {
         let arr = []
-        for(let i=0; i<n; i++) {
+        for(let i=0; i<=n; i++) {
             arr.push(i)
         }
         return arr
     }
 
-    for(let i=0; i<n; i++) {
+    for(let i=0; i<=n; i++) {
         days.push(returnArr().map((val, index) => {
-            console.log(index)
             if (index !== 0) return val + addVal
             else return val
         }).fill(0, 0, i))
@@ -26,4 +25,4 @@ function finance(n) {
     }, 0)
 }
 
-console.log(finance(6))
+console.log(finance(7))
