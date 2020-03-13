@@ -12,10 +12,23 @@ function send(text) {
     for(let i=1; i<binaryCode.length; i++) {
         let buff = ''
 
-        if(binaryCode[i+1] === '1' && referenc !== '1') buff += ' 0 '
-        else if(binaryCode[i+1] === '0' && referenc !== '0') buff += ' 00 '
+        if(binaryCode[i+1] === '1' && referenc !== '1') {
 
-        if(binaryCode[i+1] !== referenc) referenc = binaryCode[i+1]
+            referenc = binaryCode[i+1]
+
+            buff += '0'
+            buff += ' 0 '
+
+            continue
+        } else if(binaryCode[i+1] === '0' && referenc !== '0') {
+
+            referenc = binaryCode[i+1]
+
+            buff += '0'
+            buff += ' 00 '
+
+            continue
+        }
 
         buff += '0'
 
