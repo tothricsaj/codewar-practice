@@ -1,5 +1,5 @@
 function send(text) {
-    let binaryCode = (text.charCodeAt() >>> 0).toString(2)
+    let binaryCode = (text.charCodeAt()).toString(2)
     let res = ''
     let isOne = true
 
