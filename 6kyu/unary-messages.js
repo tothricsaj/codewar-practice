@@ -1,34 +1,20 @@
 function send(text) {
     let binaryCode = (text.charCodeAt()).toString(2)
     let res = ''
-    let isOne = true
 
-    for(let i=0; i<binaryCode.length; i++) {
+    console.log(`binaryCode -> ${binaryCode}`)
+
+    if(binaryCode[0] === '1') res+='0 '
+    else if(binaryCode[0] === '0') res+='00 '
+
+
+    for(let i=1; i<binaryCode.length; i++) {
         let buff = ''
 
-        if(binaryCode[i] === '1') isOne = true
-        else isOne = false
+        if(binaryCode[i+1] === '1') buff += ' 0 '
+        else if(binaryCode[i+1] === '0') buff += ' 00 '
 
-        if(isOne) {
-            buff += '0 '
-
-            for(let ind = i; ind<binaryCode.length; ind++) {
-                if(binaryCode[ind] !== '1') break;
-                buff += '0'
-            }
-
-            buff += ' '
-        } else {
-            buff += ' 00 '
-
-            for(let ind = i; ind<binaryCode.length; ind++) {
-                if(binaryCode[ind] !== '1') break;
-                buff += '0'
-            }
-
-            buff += ' '
-
-        }
+        buff += '0'
 
         res += buff
     }
