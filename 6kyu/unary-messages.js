@@ -1,47 +1,34 @@
 function send(text) {
     let binaryCode = (text.charCodeAt()).toString(2)
     let res = ''
-    let referenc = binaryCode[0]
+    let swap = true
 
-    console.log(`binaryCode -> ${binaryCode}`)
-    console.log('------------------------------------------')
+    console.log(binaryCode)
+    console.log('--------------------')
 
-    if(binaryCode[0] === '1') res+='0 0'
-    else if(binaryCode[0] === '0') res+='00 0'
-
-    for(let i=1; i<binaryCode.length; i++) {
-        let buff = ''
-
-        if(binaryCode[i+1] === '1' && referenc !== '1') {
-
-            referenc = binaryCode[i+1]
-
-            buff += '0'
-            buff += ' 0 '
-
-            continue
-        } else if(binaryCode[i+1] === '0' && referenc !== '0') {
-
-            referenc = binaryCode[i+1]
-
-            buff += '0'
-            buff += ' 00 '
-
-            continue
-        }
-
-        buff += '0'
+    for(let i=0; i<binaryCode.length; i++) {
 
         console.table({
-            index: i,
+            swap: swap,
             currChar: binaryCode[i],
-            nextChar: binaryCode[i+1],
-            reference: referenc,
-            buff: buff
+            nextChar: binaryCode[i+1]
         })
 
-        res += buff
+        if(binaryCode[i] === '1' && swap) {
+            res += '0 '
+        } else if(binaryCode[i] === '0' && swap) {
+            res += '00 '
+            console.log('BOOOOOOM')
+        }
+
+        res += '0'
+
+        if(binaryCode[i+1] !== binaryCode[i]) {
+            swap = !swap
+            res += ' '
+        }
     }
+
 
     return res
 }
@@ -50,4 +37,6 @@ function receive(text) {
   return
 }
 
-console.log(send('C'))
+console.log(send('C') + '\n')
+console.log('#########################\n')
+console.log(send('a'))
