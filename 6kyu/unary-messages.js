@@ -15,7 +15,7 @@ function send(text) {
 
         res += '0'
 
-        if(binaryCode[i+1] !== binaryCode[i]) {
+        if(binaryCode[i+1] !== binaryCode[i] && binaryCode[i+1] !== undefined) {
             swap = !swap
             res += ' '
         }
@@ -28,6 +28,6 @@ function receive(text) {
   return
 }
 
-console.log(send('C') + '\n')
+console.log(send('CC') + '\n')
 console.log('#########################\n')
 console.log(send('a'))
