@@ -3,22 +3,14 @@ function send(text) {
     let res = ''
     let swap = true
 
-    console.log(binaryCode)
-    console.log('--------------------')
-
     for(let i=0; i<binaryCode.length; i++) {
-
-        console.table({
-            swap: swap,
-            currChar: binaryCode[i],
-            nextChar: binaryCode[i+1]
-        })
 
         if(binaryCode[i] === '1' && swap) {
             res += '0 '
+            swap = false
         } else if(binaryCode[i] === '0' && swap) {
             res += '00 '
-            console.log('BOOOOOOM')
+            swap = false
         }
 
         res += '0'
@@ -28,7 +20,6 @@ function send(text) {
             res += ' '
         }
     }
-
 
     return res
 }
