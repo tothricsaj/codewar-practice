@@ -1,5 +1,11 @@
 function send(text) {
-    let binaryCode = (text.charCodeAt()).toString(2)
+    // let binaryCode = (text.charCodeAt()).toString(2)
+    let binaryCode = text.split('').map((el) => {
+        return (el.charCodeAt()).toString(2)
+    })
+
+    return binaryCode
+
     let res = ''
     let swap = true
 
@@ -30,4 +36,4 @@ function receive(text) {
 
 console.log(send('CC') + '\n')
 console.log('#########################\n')
-console.log(send('a'))
+// console.log(send('a'))
