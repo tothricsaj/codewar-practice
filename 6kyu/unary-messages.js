@@ -1,11 +1,4 @@
-function send(text) {
-    // let binaryCode = (text.charCodeAt()).toString(2)
-    let binaryCode = text.split('').map((el) => {
-        return (el.charCodeAt()).toString(2)
-    })
-
-    return binaryCode
-
+function binaryToUnary(binaryCode) {
     let res = ''
     let swap = true
 
@@ -28,6 +21,18 @@ function send(text) {
     }
 
     return res
+}
+
+
+function send(text) {
+    let binaryCode = (text.charCodeAt()).toString(2)
+    // let binaryCode = text.split('').map((el) => {
+    //     return (el.charCodeAt()).toString(2)
+    // })
+
+    // return binaryCode
+    return binaryToUnary(binaryCode)
+    
 }
 
 function receive(text) {
