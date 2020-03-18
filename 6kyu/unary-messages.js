@@ -47,6 +47,6 @@ function receive(text) {
 }
 
 console.log(send('%') + '\n')
-console.log('00 0 0 0 00 00 0 0 00 0 0 0')
+console.log('')
 // console.log('#########################\n')
 // console.log(send('aC '))
