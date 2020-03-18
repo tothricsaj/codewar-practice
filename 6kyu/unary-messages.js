@@ -25,14 +25,12 @@ function binaryToUnary(binaryCode) {
 
 
 function send(text) {
-    let binaryCode = (text.charCodeAt()).toString(2)
-    // let binaryCode = text.split('').map((el) => {
-    //     return (el.charCodeAt()).toString(2)
-    // })
+    // let binaryCode = (text.charCodeAt()).toString(2)
+    let binaryCode = text.split('').map((el) => {
+        return (el.charCodeAt()).toString(2)
+    }).join('')
 
-    // return binaryCode
     return binaryToUnary(binaryCode)
-    
 }
 
 function receive(text) {
@@ -40,5 +38,6 @@ function receive(text) {
 }
 
 console.log(send('CC') + '\n')
-console.log('#########################\n')
-// console.log(send('a'))
+console.log('0 0 00 0000 0 000 00 0000 0 00')
+// console.log('#########################\n')
+// console.log(send('aC '))
