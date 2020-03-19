@@ -10,4 +10,4 @@ Here the links are to the katas and my codes -----> :fire:
 
 # 6 kyu
 [Persist bugger](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/persistent-bugger.js)
-[Decipher this]()
+[Decipher this]() under construction :smile::fire::duck:
