@@ -1,8 +1,6 @@
 function decipherThis(str) {
     
-    let arr = str.split(' ')
-
-    arr = arr.map((el, i) => {
+    return str.split(' ').map((el, i) => {
         let reg = /\d+/g
         let firstChar = String.fromCharCode(el.match(reg))
         let firstCharLength = el.match(reg)[0].length
@@ -16,11 +14,7 @@ function decipherThis(str) {
         }
 
         return str
-
-        
-    })
-
-    return arr.join(' ')
+    }).join(' ')
 }
 
 console.log(decipherThis('72eva 97 103o 97t 116sih 97dn 115ee 104wo 121uo 100o'))
