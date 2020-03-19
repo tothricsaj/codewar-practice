@@ -7,18 +7,20 @@ function decipherThis(str) {
         let firstChar = String.fromCharCode(el.match(reg))
         let firstCharLength = el.match(reg)[0].length
 
-        console.table({
-            firstChar: firstChar,
-            firstCharLength: firstCharLength,
-            code: el.match(reg)[0]
-        })
+        let str = firstChar + el.slice(firstCharLength) 
 
-        return firstChar + el.slice(firstCharLength)
+        if(str.length > 2) {
+            
+            let deciphered = str[0] + str[str.length -1] + str.substring(2, str.length - 1) + str[1]
+            str = deciphered
+        }
+
+        return str
 
         
     })
 
-    return arr 
+    return arr.join(' ')
 }
 
 console.log(decipherThis('72eva 97 103o 97t 116sih 97dn 115ee 104wo 121uo 100o'))
