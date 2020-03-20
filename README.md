@@ -11,4 +11,4 @@ Here the links are to the katas and my codes -----> :fire:
 # 6 kyu
 * [Persist bugger](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/persistent-bugger.js)
 * [Decipher this](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/decipher-this.js)
-* [Sum of parts](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/sum-of-parts.js) (under construction)
+* [Sum of parts](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/sum-of-parts.js)
