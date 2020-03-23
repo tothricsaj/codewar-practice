@@ -1,11 +1,11 @@
 function isPangram(string){
 
     let count = 0
-    string = string.toLowerCase()
+    let strSet = new Set(string.toLowerCase().split(''))
 
     if(string.length <= 26) return false
 
-    string.split('').forEach((ch, i) => {
+    strSet.forEach((ch, i) => {
         let charCode = string.charCodeAt(i)
         if(
             charCode >= 97 || charCode <= 122
