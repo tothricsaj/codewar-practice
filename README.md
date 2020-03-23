@@ -12,4 +12,4 @@ Here the links are to the katas and my codes -----> :fire:
 * [Persist bugger](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/persistent-bugger.js)
 * [Decipher this](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/decipher-this.js)
 * [Sum of parts](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/sum-of-parts.js)
-* [Detect Panagram](#) - under construction
+* [Detect Panagram](https://github.com/tothricsaj/codewar-practice/blob/master/6kyu/detect-panagram.js)
