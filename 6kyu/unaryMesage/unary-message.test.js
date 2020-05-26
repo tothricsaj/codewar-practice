@@ -1,4 +1,8 @@
 var assert = require('assert');
+var unaryMsg = require('./unary-messages.js')
+
+let send = unaryMsg.send
+let receive = unaryMsg.receive
 
 describe("Sample tests", () => {
     it("Send", () => {
