@@ -4,7 +4,8 @@
   "description": "Practice makes perfect",
   "main": "absent-vowel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha **/*.test.js",
+    "test2": "npx mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tothricsaj/codewar-practice/issues"
   },
-  "homepage": "https://github.com/tothricsaj/codewar-practice#readme"
+  "homepage": "https://github.com/tothricsaj/codewar-practice#readme",
+  "devDependencies": {
+    "mocha": "^7.2.0"
+  }
 }
